@@ -1,0 +1,25 @@
+{
+  "name": "assemblyscript-loader",
+  "version": "1.0.0",
+  "description": "a webpack loader for compiles typescript with assemblyscript and bundles it as wasm or btyes string",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SinaMFE/assemblyscript-loader.git"
+  },
+  "keywords": [
+    "typescript",
+    "assemblyscript",
+    "loader",
+    "webpack"
+  ],
+  "author": "franktech84@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SinaMFE/assemblyscript-loader/issues"
+  },
+  "homepage": "https://github.com/SinaMFE/assemblyscript-loader#readme"
+}
