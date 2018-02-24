@@ -27,12 +27,11 @@ function AssemblyScriptLoader(source) {
   }
   var me = this;
   var targetPath = this._compiler.outputPath;
-
+  var buildTempPath = path.join(this._compiler.context,"/temp/assembly/");
   targetPath = path.join(
-    targetPath,
-    "/static/" + path.parse(this.resourcePath).name + ".wasm"
+    buildTempPath, path.parse(this.resourcePath).name + ".wasm"
   );
-  mkdirsSync(path.join(this._compiler.outputPath, "/static/"));
+  mkdirsSync(buildTempPath);
   asc.main(
     [
       path.relative(process.cwd(), this.resourcePath),
