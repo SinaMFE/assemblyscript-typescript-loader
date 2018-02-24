@@ -24,5 +24,10 @@
   "homepage": "https://github.com/SinaMFE/assemblyscript-typescript-loader#readme",
   "devDependencies": {
     "assemblyscript": "^0.3.0"
+  },
+  "dependencies": {
+    "loader-utils": "^1.1.0",
+    "mime": "^2.2.0",
+    "schema-utils": "^0.4.5"
   }
 }
