@@ -1,7 +1,7 @@
 {
   "name": "assemblyscript-typescript-loader",
-  "version": "1.2.4",
-  "description": "a webpack loader for compiles typescript with assemblyscript and bundles it as wasm or btyes string",
+  "version": "1.2.5",
+  "description": "A webpack loader for compiles typescript with assemblyscript and bundles it as wasm or btyes string",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
