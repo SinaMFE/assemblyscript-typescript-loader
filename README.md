@@ -1,7 +1,14 @@
 assemblyscript-typescript-loader
 =================
 
-[![npm](https://img.shields.io/npm/v/assemblyscript-typescript-loader.svg)](https://www.npmjs.com/package/assemblyscript-typescript-loader)
+[![npm][npm]][npm-url]
+[![node][node]][node-url]
+[![npm-stats][npm-stats]][npm-url]
+[![deps][deps]][deps-url]
+[![travis][travis]][travis-url]
+[![appveyor][appveyor]][appveyor-url]
+[![coverage][cover]][cover-url]
+[![chat][chat]][chat-url]
 
 
 A webpack loader for compiles typescript with [AssemblyScript](https://github.com/AssemblyScript/assemblyscript) and bundles it as wasm or btyes string,it as well with [Marauder](https://github.com/SinaMFE/webpack-marauder) System
@@ -107,7 +114,7 @@ You can configure a custom filename template for your file using the query param
   loader: 'assemblyscript-typescript-loader',
   options: {
     name: '[path][name].wasm'
-  }  
+  }
 }
 ```
 
@@ -124,7 +131,7 @@ You can configure a custom filename template for your file using the query param
       }
       return '[hash].wasm'
     }
-  }  
+  }
 }
 ```
 #### `placeholders`
@@ -159,7 +166,7 @@ By default, the path and name you specify will output the file in that same dire
   options: {
     name: '[path][name].wasm',
     publicPath: 'assembly/'
-  }  
+  }
 }
 ```
 
@@ -172,7 +179,7 @@ By default, the path and name you specify will output the file in that same dire
   options: {
     name: '[path][name].wasm',
     outputPath: 'assembly/'
-  }  
+  }
 }
 ```
 
