@@ -1,6 +1,3 @@
-assemblyscript-typescript-loader
-=================
-
 [![npm][npm]][npm-url]
 [![node][node]][node-url]
 [![npm-stats][npm-stats]][npm-url]
@@ -9,6 +6,9 @@ assemblyscript-typescript-loader
 [![appveyor][appveyor]][appveyor-url]
 [![coverage][cover]][cover-url]
 [![chat][chat]][chat-url]
+
+assemblyscript-typescript-loader
+=================
 
 
 A webpack loader for compiles typescript with [AssemblyScript](https://github.com/AssemblyScript/assemblyscript) and bundles it as wasm or btyes string,it as well with [Marauder](https://github.com/SinaMFE/webpack-marauder) System
