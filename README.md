@@ -1,6 +1,9 @@
 assemblyscript-typescript-loader
 =================
 
+[![npm](https://img.shields.io/npm/v/assemblyscript-typescript-loader.svg)](https://www.npmjs.com/package/assemblyscript-typescript-loader)
+
+
 A webpack loader for compiles typescript with [AssemblyScript](https://github.com/AssemblyScript/assemblyscript) and bundles it as wasm or btyes string,it as well with [Marauder](https://github.com/SinaMFE/webpack-marauder) System
 
 
