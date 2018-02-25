@@ -10,6 +10,5 @@ var WebAssemblyModule = function(deps) {
                 element: 'anyfunc'})
         }
     };
-
     return new WebAssembly.Instance(new WebAssembly.Module(buffer), deps || defaultDeps);
 };

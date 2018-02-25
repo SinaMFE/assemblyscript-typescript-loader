@@ -1,16 +1,13 @@
 {
   "name": "assemblyscript-typescript-loader",
-  "version": "1.2.5",
+  "version": "1.3.0-rc2",
   "description": "A webpack loader for compiles typescript with assemblyscript and bundles it as wasm or btyes string",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "files": [
-    "lib"
+    "dist"
   ],
   "engines": {
     "node": ">= 4.3 < 5.0.0 || >= 5.10"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -34,5 +31,48 @@
     "mime": "^2.2.0",
     "ts-loader": "^3.5.0",
     "schema-utils": "^0.4.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.0.0",
+    "babel-jest": "^21.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.0.0",
+    "babel-polyfill": "^6.0.0",
+    "babel-preset-env": "^1.0.0",
+    "cross-env": "^5.0.0",
+    "del": "^3.0.0",
+    "del-cli": "^1.0.0",
+    "eslint": "^4.0.0",
+    "eslint-config-webpack": "^1.0.0",
+    "eslint-plugin-import": "^2.0.0",
+    "jest": "^21.0.0",
+    "lint-staged": "^5.0.0",
+    "memory-fs": "^0.4.0",
+    "nsp": "^2.0.0",
+    "pre-commit": "^1.0.0",
+    "standard-version": "^4.0.0",
+    "webpack": "^3.0.0",
+    "webpack-defaults": "^1.6.0"
+  },
+  "peerDependencies": {
+    "webpack": "^2.0.0 || ^3.0.0 || ^4.0.0"
+  },
+  "scripts": {
+    "start": "npm run build -- -w",
+    "appveyor:test": "npm run test",
+    "build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+    "clean": "del-cli dist",
+    "lint": "eslint --cache src test",
+    "lint-staged": "lint-staged",
+    "prepare": "npm run build",
+    "prebuild": "npm run clean",
+    "release": "standard-version",
+    "security": "nsp check",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+    "travis:lint": "npm run lint && npm run security",
+    "travis:test": "npm run test -- --runInBand",
+    "travis:coverage": "npm run test:coverage -- --runInBand",
+    "webpack-defaults": "webpack-defaults"
   }
 }
