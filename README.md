@@ -1,11 +1,9 @@
 [![npm][npm]][npm-url]
 [![node][node]][node-url]
-[![npm-stats][npm-stats]][npm-url]
 [![deps][deps]][deps-url]
-[![travis][travis]][travis-url]
-[![appveyor][appveyor]][appveyor-url]
+[![tests][tests]][tests-url]
 [![coverage][cover]][cover-url]
-[![chat][chat]][chat-url]
+
 
 assemblyscript-typescript-loader
 =================
@@ -195,3 +193,24 @@ By default, the path and name you specify will output the file in that same dire
   }
 }
 ```
+
+
+
+
+[npm]: https://img.shields.io/npm/v/assemblyscript-typescript-loader.svg
+[npm-url]: https://npmjs.com/package/assemblyscript-typescript-loader
+
+[node]: https://img.shields.io/node/v/assemblyscript-typescript-loader.svg
+[node-url]: https://nodejs.org
+
+[deps]: https://david-dm.org/SinaMFE/assemblyscript-typescript-loader.svg
+[deps-url]: https://david-dm.org/SinaMFE/assemblyscript-typescript-loader
+
+[tests]: http://img.shields.io/travis/SinaMFE/assemblyscript-typescript-loader.svg
+[tests-url]: https://travis-ci.org/SinaMFE/assemblyscript-typescript-loader
+
+[cover]: https://img.shields.io/codecov/c/github/SinaMFE/assemblyscript-typescript-loader.svg
+[cover-url]: https://codecov.io/gh/SinaMFE/assemblyscript-typescript-loader
+
+[chat]: https://badges.gitter.im/webpack/webpack.svg
+[chat-url]: https://gitter.im/webpack/webpack
