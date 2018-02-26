@@ -2,7 +2,7 @@
 [![node][node]][node-url]
 [![deps][deps]][deps-url]
 [![tests][tests]][tests-url]
-[![coverage][cover]][cover-url]
+
 
 
 assemblyscript-typescript-loader
