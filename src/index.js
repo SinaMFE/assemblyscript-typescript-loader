@@ -46,6 +46,7 @@ function createCompatibleModuleInBundle(transpiledJs, transpiledWasm) {
                 if (typeof WebAssembly !== 'undefined') {
                     ${transpiledWasm}
                     compatibleModule = WebAssemblyModule;
+
                 }
                 else {
                     ${transpiledJs}
