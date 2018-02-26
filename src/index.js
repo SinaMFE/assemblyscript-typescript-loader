@@ -74,7 +74,7 @@ function mkDirsSync(dirname) {
     if (fs.existsSync(dirname)) {
       return true;
     } else {
-      if (mkdirsSync(path.dirname(dirname))) {
+      if (mkDirsSync(path.dirname(dirname))) {
         fs.mkdirSync(dirname);
         return true;
       }
