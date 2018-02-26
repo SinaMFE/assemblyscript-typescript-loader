@@ -181,19 +181,6 @@ By default, the path and name you specify will output the file in that same dire
 }
 ```
 
-### `useRelativePath`
-
-`useRelativePath` should be `true` if you wish to generate a relative URL to the for each file context.
-
-```js
-{
-  loader: 'assemblyscript-typescript-loader',
-  options: {
-    useRelativePath: process.env.NODE_ENV === "production"
-  }
-}
-```
-
 
 
 
