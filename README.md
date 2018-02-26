@@ -9,7 +9,7 @@ assemblyscript-typescript-loader
 =================
 
 
-A webpack loader for compiles typescript with [AssemblyScript](https://github.com/AssemblyScript/assemblyscript) and bundles it as wasm or btyes string,it as well with [Marauder](https://github.com/SinaMFE/webpack-marauder) System
+Loader for webpack to compile typescript with [AssemblyScript](https://github.com/AssemblyScript/assemblyscript) and bundle it to wasm or btyes string
 
 
 <h2 align="center">Install</h2>
@@ -37,10 +37,6 @@ module.exports = {
     ]
   }
 }
-
-
-```
-You can import ts  or asc when coding, and this loader can transform it into wasm;
 
 **assemblyscript/moduleEntry.ts**
 
