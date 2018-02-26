@@ -12,7 +12,7 @@ jobs:
   include:
     - &test-latest
       stage: Webpack latest
-      nodejs: 6
+      nodejs: 8
       env: WEBPACK_VERSION=latest JOB_PART=test
       script: npm run travis:$JOB_PART
     - <<: *test-latest
