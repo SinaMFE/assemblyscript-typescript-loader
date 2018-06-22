@@ -1,14 +1,12 @@
 "use strict";
-import assemblyscript from "assemblyscript";
 import fs from "fs";
 import path from "path";
-import asc from "assemblyscript/bin/asc.js";
+import asc from "assemblyscript/cli/asc.js";
 import loaderUtils from "loader-utils";
 import schema from "./options.bytes.json";
 import schema4file from "./options.file.json";
 import ts from "typescript";
 import validateOptions from "schema-utils";
-import mime from "mime";
 
 let wasmFooterPath = __dirname + "/wasmFooter.js";
 let wasmFooter = fs.readFileSync(wasmFooterPath, "utf-8");
@@ -41,6 +39,7 @@ function transpile2Js(source) {
 }
 function createCompatibleModuleInBundle(transpiledJs, transpiledWasm) {
     var module = `
+    function createWebAssemblyModulePromise (deps) {
       var p = new Promise(function(resolve){
         var compatibleModule;
                 if (typeof WebAssembly !== 'undefined') {
@@ -54,7 +53,10 @@ function createCompatibleModuleInBundle(transpiledJs, transpiledWasm) {
                 }
         resolve(compatibleModule().exports);;
       });
-      module.exports =p;`;
+      return p
+    }
+    module.exports = createWebAssemblyModulePromise
+    `;
     return module;
 }
 

@@ -85,7 +85,7 @@ export function step(): void {
 **file.js**
 ```js
 import asmPromise from "./assemblyscript/moduleEntry.ts";
-asmPromise.then(function(asmModule){
+asmPromise().then(function(asmModule){
   // here you can use the wasm.exports
   asmModule.step();
 })
@@ -100,7 +100,7 @@ asmPromise.then(function(asmModule){
 |**`publicPath`**|`{String\|Function}`|[`__webpack_public_path__ `](https://webpack.js.org/api/module-variables/#__webpack_public_path__-webpack-specific-)|Configure a custom `public` path for your file|
 |**`outputPath`**|`{String\|Function}`|`'undefined'`|Configure a custom `output` path for your file|
 
-### `name`
+### `{name}`
 
 You can configure a custom filename template for your file using the query parameter `name`. For instance, to copy a file from your `context` directory into the output directory retaining the full directory structure, you might use
 
