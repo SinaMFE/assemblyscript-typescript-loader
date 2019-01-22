@@ -1,7 +1,7 @@
 "use strict";
 import fs from "fs";
 import path from "path";
-import asc from "assemblyscript/cli/asc.js";
+import asc from "assemblyscript/bin/asc";
 import loaderUtils from "loader-utils";
 import schema from "./options.bytes.json";
 import schema4file from "./options.file.json";

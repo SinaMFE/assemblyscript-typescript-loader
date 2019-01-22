@@ -26,14 +26,14 @@
   },
   "homepage": "https://github.com/SinaMFE/assemblyscript-typescript-loader#readme",
   "dependencies": {
-    "assemblyscript": "AssemblyScript/assemblyscript",
     "loader-utils": "^1.1.0",
     "mime": "^2.2.0",
     "ts-loader": "^3.5.0",
     "schema-utils": "^0.4.5"
   },
   "devDependencies": {
-    "babel-cli": "^6.0.0",
+    "assemblyscript": "github:AssemblyScript/assemblyscript",
+    "babel-cli": "^6.26.0",
     "babel-jest": "^21.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.0.0",
     "babel-polyfill": "^6.0.0",
@@ -45,13 +45,13 @@
     "eslint": "^4.0.0",
     "eslint-config-webpack": "^1.0.0",
     "eslint-plugin-import": "^2.0.0",
-    "jest": "^21.0.0",
+    "jest": "^21.2.1",
     "lint-staged": "^5.0.0",
     "memory-fs": "^0.4.0",
     "nsp": "^2.0.0",
     "pre-commit": "^1.0.0",
     "standard-version": "^4.0.0",
-    "webpack": "^3.0.0",
+    "webpack": "^3.12.0",
     "webpack-defaults": "^1.6.0"
   },
   "peerDependencies": {
