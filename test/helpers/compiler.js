@@ -25,7 +25,7 @@ const module = (config) => {
 };
 
 const plugins = config => ([
-  new webpack.optimize.CommonsChunkPlugin({
+  new webpack.optimize.SplitChunksPlugin({
     name: ['runtime'],
     minChunks: Infinity,
   }),
