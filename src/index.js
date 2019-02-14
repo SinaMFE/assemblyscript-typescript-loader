@@ -1,7 +1,7 @@
 "use strict";
 import fs from "fs";
 import path from "path";
-import asc from "assemblyscript/bin/asc";
+import asc from "assemblyscript/cli/asc";
 import loaderUtils from "loader-utils";
 import schema from "./options.bytes.json";
 import schema4file from "./options.file.json";
@@ -51,7 +51,7 @@ function createCompatibleModuleInBundle(transpiledJs, transpiledWasm) {
                     ${transpiledJs}
                     compatibleModule = function() {};          compatibleModule.prototype.exports = exports;
                 }
-        resolve(compatibleModule().exports);;
+        resolve(compatibleModule(deps).exports);;
       });
       return p
     }
