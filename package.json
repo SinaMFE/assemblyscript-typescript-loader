@@ -1,6 +1,6 @@
 {
   "name": "assemblyscript-typescript-loader",
-  "version": "1.3.6",
+  "version": "1.4.0",
   "description": "A webpack loader for compiles typescript with assemblyscript and bundles it as wasm or btyes string",
   "main": "dist/index.js",
   "files": [
