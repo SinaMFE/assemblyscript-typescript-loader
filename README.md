@@ -89,13 +89,41 @@ asmPromise().then(function(asmModule){
 
 <h2 align="center">Options</h2>
 
+[The loader supports some of the AS options here](https://github.com/AssemblyScript/assemblyscript/wiki/Using-the-compiler)
+
 |Name|Type|Default|Description|
 |:--:|:--:|:-----:|:----------|
 |**`name`**|`{String\|Function}`|`[hash].[ext]`|Configure a custom filename template for your file|
 |**`limit`**|`{Int}`|`undefined`|Byte limit to the wasm file,if the size is smaller then limit value ,the wasm will bundled into js ,or the wasm file will build into dist ,well runtime , bundled js will fetch it and return the Promise object;
 |**`publicPath`**|`{String\|Function}`|[`__webpack_public_path__ `](https://webpack.js.org/api/module-variables/#__webpack_public_path__-webpack-specific-)|Configure a custom `public` path for your file|
 |**`outputPath`**|`{String\|Function}`|`'undefined'`|Configure a custom `output` path for your file|
-
+|inherited options from AS |
+|**`optimize`**|`{String}`|`'-0'`|-O     Uses defaults. Equivalent to -O2s<br>-O0    Equivalent to --optimizeLevel 0<br>-O1    Equivalent to --optimizeLevel 1<br>-O2    Equivalent to --optimizeLevel 2<br>-O2s   Equivalent to --optimizeLevel 2 but with --shrinkLevel 1<br>-O2z   Equivalent to --optimizeLevel 2 but with --shrinkLevel 2<br>-O3    Equivalent to --optimizeLevel 3<br>-Oz    Equivalent to -O but with --shrinkLevel 2 and same as -O2z<br>-O3s   Equivalent to -O3 with --shrinkLevel 1<br>-O3z   Equivalent to -O3 with --shrinkLevel 2|
+|**`optimizeLevel`**|`{Int}`|``| How much to focus on optimizing code. [0-3]|
+|**`shrinkLevel`**|`{Int}`|``|How much to focus on shrinking code size. [0-2, s=1, z=2]|
+|**`validate`**|`{Boolean}`|`false`|Validates the module using Binaryen. Exits if invalid.|
+|**`sourceMap`**|`{Boolean}`|`false`|Enables source map generation. Optionally takes the URL used to reference the source map from the binary file.|
+|**`debug`**|`{Boolean}`|`false`|Enables debug information in emitted binaries.|
+|**`noTreeShaking`**|`{Boolean}`|`false`|Disables compiler-level tree-shaking, compiling everything.|
+|**`noAssert`**|`{Boolean}`|`false`|Replaces assertions with just their value without trapping.|
+|**`noEmit`**|`{Boolean}`|`false`|Performs compilation as usual but does not emit code.|
+|**`importMemory`**|`{Boolean}`|`false`|Imports the memory instance provided by the embedder.|
+|**`memoryBase`**|`{Int}`|`0`|Sets the start offset of compiler-generated static memory.|
+|**`importTable`**|`{Boolean}`|`0`|Imports the function table instance provided by the embedder.|
+|**`noLib`**|`{Boolean`|`false`|Does not include the shipped standard library.|
+|**`lib`**|`{String}`|`0`|Adds one or multiple paths to custom library components and uses exports of all top-level files at this path as globals.|
+|**`use`**|`{String}`|``|Aliases a global object under another name, e.g., to switch the default 'Math' implementation used: --use Math=JSMath|
+|**`trapMode`**|`{String}`|``|Sets the trap mode to use. <br>allow  Allow trapping operations. This is the default.<br> clamp  Replace trapping operations with clamping semantics. <br>js     Replace trapping operations with JS semantics.|
+|**`runPasses`**|`{String}`|``|Specifies additional Binaryen passes to run after other <br> optimizations, if any. See: Binaryen/src/passes/pass.cpp|
+|**`enable`**|`{String}`|``|Enables additional (experimental) WebAssembly features.<br>sign-extension  Enables sign-extension operations<br>mutable-global  Enables mutable global imports and exports<br>bulk-memory     Enables fast bulk memory operations|
+|**`transform`**|`{String}`|``|Specifies the path to a custom transform to 'require'.|
+|**`measure`**|`{Int}`|`0`|Prints measuring information on I/O and compile times.|
+|~~`binaryFile`~~|`{String}`|``|Specifies the binary output file (.wasm).|
+|~~`textFile`~~|`{String}`|``|Specifies the text output file (.wat).|
+|~~`asmjsFile`~~|`{String}`|``|Specifies the asm.js output file (.js).|
+|~~`idlFile`~~|`{String}`|``|Specifies the WebIDL output file (.webidl).|
+|~~`tsdFile`~~|`{String}`|``|Specifies the TypeScript definition output file (.d.ts).|
+|~~`noColors`~~|`{Int}`|`0`|Disables terminal colors.|
 ### `{name}`
 
 You can configure a custom filename template for your file using the query parameter `name`. For instance, to copy a file from your `context` directory into the output directory retaining the full directory structure, you might use

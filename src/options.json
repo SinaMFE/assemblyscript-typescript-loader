@@ -1,0 +1,132 @@
+{
+    "optimize": {
+      "description": [
+        "Optimizes the module. Also has the usual shorthands:",
+        "",
+        " -O     Uses defaults. Equivalent to -O2s",
+        " -O0    Equivalent to --optimizeLevel 0",
+        " -O1    Equivalent to --optimizeLevel 1",
+        " -O2    Equivalent to --optimizeLevel 2",
+        " -O3    Equivalent to --optimizeLevel 3",
+        " -Oz    Equivalent to -O but with --shrinkLevel 2",
+        " -O3s   Equivalent to -O3 with --shrinkLevel 1 etc.",
+        ""
+      ],
+      "type": "string",
+      "alias": "O"
+    },
+    "optimizeLevel": {
+      "description": "How much to focus on optimizing code. [0-3]",
+      "type": "number"
+    },
+    "shrinkLevel": {
+      "description": "How much to focus on shrinking code size. [0-2, s=1, z=2]",
+      "type": "number"
+    },
+    "validate": {
+      "description": "Validates the module using Binaryen. Exits if invalid.",
+      "type": "bool",
+      "alias": "c",
+      "default": false
+    },
+    "sourceMap": {
+      "description": [
+        "Enables source map generation. Optionally takes the URL",
+        "used to reference the source map from the binary file."
+      ],
+      "type": "string"
+    },
+    "debug": {
+      "description": "Enables debug information in emitted binaries.",
+      "type": "bool",
+      "default": false
+    },
+    "noTreeShaking": {
+      "description": "Disables compiler-level tree-shaking, compiling everything.",
+      "type": "bool",
+      "default": false
+    },
+    "noAssert": {
+      "description": "Replaces assertions with just their value without trapping.",
+      "type": "bool",
+      "default": false
+    },
+    "noEmit": {
+      "description": "Performs compilation as usual but does not emit code.",
+      "type": "bool",
+      "default": false
+    },
+    "importMemory": {
+      "description": "Imports the memory instance provided by the embedder.",
+      "type": "bool",
+      "default": false
+    },
+    "memoryBase": {
+      "description": "Sets the start offset of compiler-generated static memory.",
+      "type": "number",
+      "default": 0
+    },
+    "importTable": {
+      "description": "Imports the function table instance provided by the embedder.",
+      "type": "bool",
+      "default": false
+    },
+    "noLib": {
+      "description": "Does not include the shipped standard library.",
+      "type": "bool",
+      "default": false
+    },
+    "lib": {
+      "description": [
+        "Adds one or multiple paths to custom library components and",
+        "uses exports of all top-level files at this path as globals."
+      ],
+      "type": "string"
+    },
+    "use": {
+      "description": [
+        "Aliases a global object under another name, e.g., to switch",
+        "the default 'Math' implementation used: --use Math=JSMath"
+      ],
+      "type": "string",
+      "alias": "u"
+    },
+    "trapMode": {
+      "description": [
+        "Sets the trap mode to use.",
+        "",
+        " allow  Allow trapping operations. This is the default.",
+        " clamp  Replace trapping operations with clamping semantics.",
+        " js     Replace trapping operations with JS semantics.",
+        ""
+      ],
+      "type": "string",
+      "default": "allow"
+    },
+    "runPasses": {
+      "description":  [
+        "Specifies additional Binaryen passes to run after other",
+        "optimizations, if any. See: Binaryen/src/passes/pass.cpp"
+      ],
+      "type": "string"
+    },
+    "enable": {
+      "description": [
+        "Enables additional (experimental) WebAssembly features.",
+        "",
+        " sign-extension  Enables sign-extension operations",
+        " mutable-global  Enables mutable global imports and exports",
+        ""
+      ],
+      "type": "string"
+    },
+    "transform": {
+      "description": "Specifies the path to a custom transform to 'require'.",
+      "type": "string"
+    },
+    "measure": {
+      "description": "Prints measuring information on I/O and compile times.",
+      "type": "bool",
+      "default": false
+    }
+  }

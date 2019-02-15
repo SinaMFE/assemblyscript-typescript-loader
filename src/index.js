@@ -7,7 +7,7 @@ import schema from "./options.bytes.json";
 import schema4file from "./options.file.json";
 import ts from "typescript";
 import validateOptions from "schema-utils";
-
+import optionUtils from "./optionsUtils";
 let wasmFooterPath = __dirname + "/wasmFooter.js";
 let wasmFooter = fs.readFileSync(wasmFooterPath, "utf-8");
 
@@ -97,15 +97,18 @@ export default function loader(source) {
         path.parse(this.resourcePath).name + ".wasm"
     );
     mkDirsSync(buildTempPath);
+    let params = [
+        path.relative(process.cwd(), this.resourcePath),
+        "-o",
+        path.relative(process.cwd(), targetPath)
+        // ,
+        // "--optimize",
+        // "--validate",
+        // "--sourceMap"
+    ];
+    optionUtils(params,options);
     asc.main(
-        [
-            path.relative(process.cwd(), this.resourcePath),
-            "-o",
-            path.relative(process.cwd(), targetPath),
-            "--optimize",
-            "--validate",
-            "--sourceMap"
-        ],
+        params,
         function(err) {
             if (err) throw err;
             var distStates = fs.statSync(targetPath);
