@@ -7,7 +7,9 @@ describe('Loader', () => {
       loader: {
         test: /(ts)/,
         options: {
-            name: '[path][name].wasm'
+            name: '[path][name].wasm',
+            optimize:"-1",
+            validate:true
         }
       },
     };
