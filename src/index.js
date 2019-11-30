@@ -62,15 +62,17 @@ function createCompatibleModuleInBundle(transpiledJs, transpiledWasm) {
 
 function createCompatibleModuleOutBundle(publicPath) {
     return `
-        var f=fetch(${publicPath}).then(function(response){
-            return response.arrayBuffer();
-        }).then(function(binary){
-                var module = new WebAssembly.Module(binary);
-                var instance = new WebAssembly.Instance(module, { env: { abort: function() {} } });
-                return instance.exports;
-        });
-        module.exports =f;
-            `;
+        function createWebAssemblyModulePromise() {
+            var p = WebAssembly.instantiateStreaming(
+                fetch(${publicPath}),
+                { env: { abort: function() {} } }
+            ).then(function(module) {
+                return module.instance.exports;
+            });
+            return p;
+        }
+        module.exports = createWebAssemblyModulePromise;
+    `;
 }
 function mkDirsSync(dirname) {
     if (fs.existsSync(dirname)) {
