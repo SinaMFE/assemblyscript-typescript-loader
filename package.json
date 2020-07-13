@@ -50,7 +50,7 @@
     "memory-fs": "^0.4.0",
     "nsp": "^2.0.0",
     "pre-commit": "^1.0.0",
-    "standard-version": "^4.0.0",
+    "standard-version": "^8.0.1",
     "webpack": "^4.29.0",
     "webpack-defaults": "^1.6.0"
   },
